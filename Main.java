@@ -75,7 +75,7 @@ class Tarefa {
     }
 
     public void setPrioridade(int prioridade) {
-        if (prioridade <= 5){
+        if (prioridade <= 5 && prioridade >= 1){
             this.prioridade = prioridade;
         }
         else {
@@ -100,21 +100,30 @@ class Tarefa {
 
 public class Main {
     public static void main(String[] args){
+        System.out.println("============ Tarefa 1 ==============");
+        
         Tarefa tarefa1 = new Tarefa("Estudar POO", "Revisar os conceitos de classes e objetos", "06-09-2024", 1);
         System.out.println("Titulo: " + tarefa1.getTitulo());
         tarefa1.exibirDetalhes();
-        System.out.print("Novo prazo da tarefa1: ");
+        System.out.print("Novo prazo da tarefa: ");
         tarefa1.setPrazo("2024-08-32");
-        System.out.println("============== Tarefa 2 =============");
+        System.out.print("Prioridade da tarefa: ");
+        tarefa1.setPrioridade(5);
         
+        System.out.println("============== Tarefa 2 =============");
+       
         Tarefa tarefa2 = new Tarefa("Estudar para a prova", "2024-09-14");
         tarefa2.exibirDetalhes();
         System.out.println("Dias restantes: " + tarefa2.calcularDiasRestantes());
+        tarefa2.setPrazo("2024-08-32");
+        System.out.print("Prioridade da tarefa: ");
+        tarefa2.setPrioridade(-7);
+        
         System.out.println("============ Tarefa 3 =============");
+        
         Tarefa tarefa3 = new Tarefa("Estudar para a prova", 3);
         tarefa3.exibirDetalhes();
         System.out.print("Prioridade da tarefa: ");
-        tarefa1.setPrioridade(7);
-       
+        tarefa3.setPrioridade(7);
     }
 }
