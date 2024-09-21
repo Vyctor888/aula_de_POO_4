@@ -3,7 +3,7 @@ public class TarefaFlexivel extends Tarefa {
 
     //construtor completo da tarefa urgente
     public TarefaFlexivel(String titulo, String descricao, String prazo, int diasFlexibilidades) {
-        super(titulo, descricao, prazo, prioridade);
+        super(titulo, descricao, prazo, 1);
         this.diasFlexibilidades = diasFlexibilidades;
     }
 
@@ -17,6 +17,7 @@ public class TarefaFlexivel extends Tarefa {
 
     @Override
     public void exibirDetalhes () {
+        System.out.println("============ Tarefa com prezo flexível ===========");
         super.exibirDetalhes();
         System.out.println("Dias de flexibilidades: " + this.diasFlexibilidades);
     }
